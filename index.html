@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Do you love me?</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* ইমোজিটিকে কিউটভাবে লাফানোর জন্য ছোট একটি অ্যানিমেশন */
+@keyframes bounce {
+0% { transform: translateY(0) scale(1); }
+100% { transform: translateY(-15px) scale(1.05); }
+}
+
+.bouncing-emoji {
+font-size: 5rem;
+margin-bottom: 10px;
+display: inline-block;
+animation: bounce 0.8s infinite alternate ease-in-out;
+}
+
+/* PASSCODE SCREEN */
+#lockScreen{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:99999;
+}
+
+.lockBox{
+width:340px;
+padding:35px;
+border-radius:20px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(12px);
+text-align:center;
+color:white;
+box-shadow:0 8px 32px rgba(0,0,0,0.4);
+}
+
+.lockBox h1{
+margin-bottom:15px;
+font-size:35px;
+}
+
+.lockBox p{
+margin-bottom:15px;
+}
+
+.lockBox input{
+width:100%;
+padding:14px;
+margin-top:15px;
+border:none;
+border-radius:12px;
+font-size:16px;
+outline:none;
+}
+
+.lockBox button{
+width:100%;
+padding:14px;
+margin-top:15px;
+border:none;
+border-radius:12px;
+background:#00bfff;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.lockBox button:hover{
+background:#0099cc;
+transform:scale(1.03);
+}
+
+#error{
+margin-top:12px;
+color:#ffb3b3;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PASSCODE SCREEN -->
+<div id="lockScreen">
+
+<div class="lockBox">
+
+<h1>Welcome 🌊</h1>
+
+<p>Enter Passcode To Continue</p>
+
+<input type="password" id="passcode" placeholder="Enter Passcode">
+
+<button onclick="checkPasscode()">Enter Website</button>
+
+<div id="error"></div>
+
+</div>
+
+</div>
+
+<!-- YOUR ORIGINAL WEBSITE -->
+<div class="container">
+
+<div id="proposal-screen" class="screen active">
+
+<div class="gif-container">
+<img id="cute-cat" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2NuN2Zid3V1N3phNXN0ZTh6bXN4OHRveW05NTh3M3A0dXp5Y2p3ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute Cat">
+</div>
+
+<h1 id="prompt-text">
+Do you love me? <span class="heart">❤️</span>
+</h1>
+
+<div class="btn-group">
+<button id="yes-btn">YES</button>
+<button id="no-btn">NO</button>
+</div>
+
+</div>
+
+<div id="success-screen" class="screen">
+
+<div class="gif-container">
+<div class="bouncing-emoji">🐱💖</div>
+</div>
+
+<h2>I knew you'd say yes 💕</h2>
+
+<div class="gifts-container">
+
+<div class="gift-card" onclick="openGift('music')">
+<div class="gift-box">🎁</div>
+<button class="gift-btn">GIFT 1</button>
+</div>
+
+<div class="gift-card" onclick="openGift('letter')">
+<div class="gift-box">🎁</div>
+<button class="gift-btn">GIFT 2</button>
+</div>
+
+</div>
+
+</div>
+
+<div id="content-screen" class="screen">
+<div id="gift-content"></div>
+
+<button class="back-btn" onclick="goBackToGifts()">
+Go back
+</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+<!-- PASSCODE SCRIPT -->
+<script>
+
+function checkPasscode(){
+
+const correctPasscode = "30MAY";
+
+const userInput =
+document.getElementById("passcode").value;
+
+if(userInput === correctPasscode){
+
+document.getElementById("lockScreen").style.display = "none";
+
+}else{
+
+document.getElementById("error").innerHTML =
+"Wrong Passcode!";
+}
+}
+
+</script>
+
+</body>
+</html>
+

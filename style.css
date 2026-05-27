@@ -1,0 +1,157 @@
+:root {
+--bg-color: #fdeef4;
+--text-color: #d14d72;
+--yes-color: #6bb38a;
+--no-color: #e05353;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+background-color: var(--bg-color);
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+overflow: hidden;
+}
+
+.container {
+text-align: center;
+width: 100%;
+max-width: 500px;
+padding: 20px;
+position: relative;
+}
+
+.screen {
+display: none;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+transition: all 0.3s ease;
+}
+
+.screen.active {
+display: flex;
+}
+
+.gif-container img {
+width: 150px;
+height: 150px;
+object-fit: contain;
+margin-bottom: 20px;
+}
+
+h1, h2 {
+color: var(--text-color);
+margin-bottom: 30px;
+font-size: 2rem;
+}
+
+.heart {
+display: inline-block;
+animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+0% { transform: scale(1); }
+50% { transform: scale(1.2); }
+100% { transform: scale(1); }
+}
+
+/* Buttons styling */
+.btn-group {
+display: flex;
+gap: 20px;
+justify-content: center;
+align-items: center;
+position: relative;
+min-height: 150px;
+width: 100%;
+}
+
+button {
+padding: 12px 35px;
+font-size: 1.2rem;
+font-weight: bold;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+color: white;
+box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+transition: transform 0.1s ease, font-size 0.2s ease, padding 0.2s ease;
+}
+
+#yes-btn {
+background-color: var(--yes-color);
+z-index: 10;
+}
+
+#no-btn {
+background-color: var(--no-color);
+position: relative;
+}
+
+/* Gifts Styling (Perfect side-by-side fit for 2 boxes) */
+.gifts-container {
+display: flex;
+justify-content: center;
+width: 100%;
+margin-top: 20px;
+gap: 25px;
+max-width: 360px;
+}
+
+.gift-card {
+background: white;
+border-radius: 12px;
+padding: 20px;
+flex: 1;
+cursor: pointer;
+box-shadow: 0 4px 10px rgba(209, 77, 114, 0.15);
+border: 2px dashed #f9a8d4;
+transition: transform 0.2s;
+}
+
+.gift-card:hover {
+transform: translateY(-5px);
+}
+
+.gift-box {
+font-size: 2.8rem;
+margin-bottom: 10px;
+}
+
+.gift-btn {
+background-color: #fca5a5;
+padding: 6px 12px;
+font-size: 0.85rem;
+width: 100%;
+box-shadow: none;
+}
+
+/* Inner Gift Content Styling */
+#gift-content {
+color: #4a4a4a;
+background: white;
+padding: 30px;
+border-radius: 15px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+width: 100%;
+max-height: 60vh;
+overflow-y: auto;
+margin-bottom: 20px;
+text-align: left;
+}
+
+.back-btn {
+background-color: var(--text-color);
+font-size: 1rem;
+padding: 10px 20px;
+}
