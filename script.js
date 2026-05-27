@@ -84,11 +84,12 @@ allowfullscreen>
 } else if (giftType === 'letter') {
 // GIFT 2: Love Letter
 giftContent.innerHTML = `
-<h3 style="color: var(--text-color); margin-bottom: 15px; text-align:center;">আমার ভালোবাসা 💌</h3>
+<h3 style="color: var(--text-color); margin-bottom: 15px; text-align:center;">💌</h3>
 <p style="line-height: 1.6; font-size: 0.95rem; text-align: justify;">
-এখানে আপনার নিজের মনের মতো চিঠিটি লিখুন। <br><br>
-যেমন: তুমি আমার জীবনের সবচেয়ে সুন্দর উপহার। তোমার সাথে কাটানো প্রতিটি মুহূর্ত আমার কাছে স্পেশাল। <br><br>
-<strong>সবসময় তোমারই...</strong>
+🌙💕
+Chand bhi sharma jaaye teri khoobsurti dekh kar, jaise raat ki har roshni sirf tere liye bani ho ✨❤️ Teri muskurahat mere dil ko sukoon deti hai, aur teri baatein meri duniya ko khubsurat bana deti hain 😊🌹 Jab bhi tera khayal aata hai, dil ek ajeeb si khushi se bhar jaata hai 💖 Har dua mein sirf tera naam hota hai, kyunki tu mere liye sirf ek insan nahi, meri zindagi ki sabse pyari wajah hai 🥺💫 Tere saath guzara har pal ek haseen khwaab jaisa lagta hai, aur dil bas yahi chahta hai ke yeh khwaab kabhi khatam na ho 💕🌍
+ <br><br>
+<strong>Always yours...</strong>
 </p>
 `;
 }
